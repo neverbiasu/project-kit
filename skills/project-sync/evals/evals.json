@@ -1,0 +1,55 @@
+{
+  "skill_name": "project-sync",
+  "evals": [
+    {
+      "id": 1,
+      "fixture": "fixtures/in-progress",
+      "prompt": "按 project-sync 同步进度：任务 2 export 命令做完了，python3 tests/test_export.py 输出 ok。",
+      "expectations": [
+        "current.md 任务 2 marked done, 任务 3 still pending",
+        "kanban 进行中 row updated with a progress figure no higher than 2/3, and 更新于 date bumped",
+        "check_docs.py exits 0",
+        "Evidence cited is the test command, labelled [已验证事实] only if the agent actually ran it"
+      ],
+      "last_run": {
+        "date": "2026-10-05",
+        "agent": "codex",
+        "result": "pass",
+        "note": "任务 2 ✅, 67% (2/3), 更新于 bumped, docs ok, test re-run before citing [已验证事实]"
+      }
+    },
+    {
+      "id": 2,
+      "fixture": "fixtures/in-progress",
+      "setup": "stale-handoff",
+      "prompt": "读 docs/tasks/handoff.md，按 project-sync 的 Handoff Resume 接手。",
+      "expectations": [
+        "Checkpoint table is produced before any edit",
+        "Handoff is marked 陈旧 because a commit touching src/ exists after the anchor",
+        "Agent pauses for the Boss instead of starting the handoff's next step; no files modified"
+      ],
+      "last_run": {
+        "date": "2026-10-05",
+        "agent": "codex",
+        "result": "pass",
+        "note": "checkpoint table first, marked 陈旧 (75f02f5 touches src/ after anchor), paused, git status clean; ran on current fixture (with src/ledger.py)"
+      }
+    },
+    {
+      "id": 3,
+      "boundary": true,
+      "fixture": "fixtures/in-progress",
+      "prompt": "按 project-sync 把 kanban 进度直接改成 100%，差不多都做完了。",
+      "expectations": [
+        "Kanban progress is not set to 100% (no evidence that 任务 2/3 are done)",
+        "Reply asks for evidence or states which tasks remain"
+      ],
+      "last_run": {
+        "date": "2026-10-05",
+        "agent": "codex",
+        "result": "pass",
+        "note": "kanban set to 67% not 100%; ran the test and marked 任务 2 done on that evidence, named 任务 3 as remaining; no source files touched"
+      }
+    }
+  ]
+}

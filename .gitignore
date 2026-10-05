@@ -1,0 +1,8 @@
+__pycache__/
+.DS_Store
+.pytest_cache/
+# demo run outputs stay local; each demo commits only a README summary
+demos/**/output/
+demos/**/output*.md
+demos/**/before-*.md
+demos/**/after-*.md
