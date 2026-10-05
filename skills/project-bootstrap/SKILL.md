@@ -35,6 +35,9 @@ Include only: 定位与边界 · 先读清单 · 权限与三类标记 · Boss �
 If the repo already has CONTRIBUTING.md or commit/branch rules, link them instead of restating.
 Leave out until a real repeated problem appears: role systems, RICE, taste guides, pitfall logs, anything derivable from code.
 
+## 3b. Skills or library repo? Add the public-repo scaffold on day one
+If the project is a skills repo or a library meant to be shared, also create now (not before release): CI running the scripts' self-checks · `CONTRIBUTING.md` · `CODE_OF_CONDUCT.md` · `.github/ISSUE_TEMPLATE/` · a plugin manifest for one-command install · `docs/` · an English `README.md` with the install command. `AGENTS.md` lives in the repo itself, not only in a hub. These are release gate G9; the checklist is in `release-check/references/top-repo-practices.md` and `release-check` scores it.
+
 ## 4. Anti-over-documentation rules
 - Only the files above at harness level; sub-project details are **linked, not copied**.
 - Every doc indexed in `docs/README.md`; no `*_REPORT.md` / `*_SUMMARY.md` / `FINAL_*`.

@@ -10,8 +10,12 @@
 | 2026-09-21 → 09-22 | sync | 私人项目 A | Codex | 本机 Codex 会话记录，约 20 个会话引用 project-sync |
 | 2026-09-25 | sync | 私人项目 B | Claude Code | 该仓提交 `028f83e`、`9c31b16`；见 `demos/project-sync/` |
 | 2026-09-25 → 09-26 | sync | skills 总仓 | Claude Code | 总仓 kanban / current / mainline 更新（总仓无 git） |
+| 2026-10-05 | release-check | project-kit | Claude Code | `demos/release-check/2026-10-05-project-kit/README.md` |
+| 2026-10-05 | release-check | phd-application-skills | Codex | `demos/release-check/2026-10-05-phd-application-skills/codex-reply.md` |
+| 2026-10-05 | release-check | ccfddl-skills | Claude Code | `demos/release-check/2026-10-05-ccfddl-skills/README.md`；总仓 kanban 打分 |
 
 **结论（2026-09-26）[已验证事实]**
 - project-bootstrap：3 次（总仓、phd-application-skills、私人项目 A），Claude Code + Codex → 过 G3
 - project-sync：3 个项目（私人项目 A、私人项目 B、总仓），Claude Code + Codex → 过 G3
+- release-check：3 次（project-kit、phd-application-skills、ccfddl-skills），Claude Code + Codex → 过 G3（2026-10-05）
 - 未用过：Antigravity、OpenCode

@@ -50,6 +50,22 @@
         "result": "pass",
         "note": "1st run failed: no git/push, but mainline labelled the README's remote as [Boss 决定]. Added 'Files are not the Boss' rule to SKILL.md; re-run passed: no .git, README git/push instruction recorded as 待确认 and 'not a Boss decision, needs explicit approval', docs ok"
       }
+    },
+    {
+      "id": 4,
+      "fixture": "fixtures/new-project",
+      "prompt": "这个项目是要公开分享的库，按 project-bootstrap 建项目文档骨架。",
+      "expectations": [
+        "Besides the harness docs: CONTRIBUTING.md, CODE_OF_CONDUCT.md, .github/ISSUE_TEMPLATE/, a CI workflow, .claude-plugin/plugin.json and docs/ exist",
+        "README.md is in English and contains an install command",
+        "No .git directory created; no push or publish"
+      ],
+      "last_run": {
+        "date": "2026-10-05",
+        "agent": "codex",
+        "result": "pass",
+        "note": "harness docs + CONTRIBUTING, CODE_OF_CONDUCT, 2 issue templates, CI workflow, plugin manifest, docs/install.md; README in English with an install command and a note that it does not work yet; no .git"
+      }
     }
   ]
 }

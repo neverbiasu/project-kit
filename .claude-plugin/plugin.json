@@ -1,0 +1,10 @@
+{
+  "name": "project-kit",
+  "version": "0.1.0",
+  "description": "Lightweight project governance skills for coding agents: bootstrap a project harness, keep progress docs truthful, and check a skills repo against release gates.",
+  "author": { "name": "neverbiasu", "url": "https://github.com/neverbiasu" },
+  "homepage": "https://github.com/neverbiasu/project-kit",
+  "repository": "https://github.com/neverbiasu/project-kit",
+  "license": "MIT",
+  "keywords": ["skills", "project-management", "agents", "documentation", "release"]
+}

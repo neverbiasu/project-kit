@@ -21,7 +21,8 @@ PY
      printf '\n\ndef export_json(rows):\n    raise NotImplementedError\n' >> src/ledger.py
      git add -A && git -c user.name=eval -c user.email=eval@local commit -qm "feat: start json export")
   fi
-  P="$prompt（skill 文件：$PK/skills/$SKILL/SKILL.md；check 脚本：$PK/skills/project-sync/scripts/check_docs.py）"
+  P="$prompt（skill 文件：$PK/skills/$SKILL/SKILL.md）"
+  [ "$SKILL" != release-check ] && P="${P%）}；check 脚本：$PK/skills/project-sync/scripts/check_docs.py）"
   codex exec --skip-git-repo-check -s workspace-write -C "$W" --json -o "$W.reply.md" "$P" \
     > "$W.log.jsonl" 2>&1 < /dev/null || echo "case $id: codex exit $?"
   echo "case $id -> $W"

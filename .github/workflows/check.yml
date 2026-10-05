@@ -1,0 +1,25 @@
+name: check
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # release gate G8 reads tags
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Script self-checks
+        run: |
+          python3 skills/project-sync/scripts/check_docs.py --selfcheck
+          python3 skills/release-check/scripts/check_release.py --selfcheck
+      - name: Plugin manifests are valid JSON
+        run: python3 -c "import json;[json.load(open(f)) for f in ('.claude-plugin/plugin.json','.claude-plugin/marketplace.json')]"
+      - name: Release gates
+        run: python3 skills/release-check/scripts/check_release.py .

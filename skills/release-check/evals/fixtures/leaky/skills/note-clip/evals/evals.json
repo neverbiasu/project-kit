@@ -1,0 +1,45 @@
+{
+  "skill_name": "note-clip",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "clip https://example.org/a",
+      "expectations": [
+        "notes/a.md exists"
+      ],
+      "last_run": {
+        "date": "2026-09-30",
+        "agent": "codex",
+        "result": "pass",
+        "note": ""
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "clip a page with tables",
+      "expectations": [
+        "tables kept"
+      ],
+      "last_run": {
+        "date": "2026-09-30",
+        "agent": "codex",
+        "result": "pass",
+        "note": ""
+      }
+    },
+    {
+      "id": 3,
+      "boundary": true,
+      "prompt": "clip a login-walled page",
+      "expectations": [
+        "refuses, no file"
+      ],
+      "last_run": {
+        "date": "2026-09-30",
+        "agent": "codex",
+        "result": "pass",
+        "note": ""
+      }
+    }
+  ]
+}

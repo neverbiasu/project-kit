@@ -1,0 +1,9 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "project-kit",
+  "description": "Project governance skills: bootstrap, sync, release check.",
+  "owner": { "name": "neverbiasu" },
+  "plugins": [
+    { "name": "project-kit", "description": "Bootstrap a project harness, sync progress docs, check release gates.", "source": "./", "category": "productivity" }
+  ]
+}
